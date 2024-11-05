@@ -5,6 +5,6 @@ import time
 try:
     while True:
         pyautogui.click()  # Sol fare tıklaması yap
-        time.sleep(0.1)  # 100ms bekle
+        time.sleep(0.001)  # 100ms bekle
 except KeyboardInterrupt:
     print("Program durduruldu.")
