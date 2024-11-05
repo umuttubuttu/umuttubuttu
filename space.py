@@ -1,10 +1,10 @@
 import pyautogui
 import time
 
-# Kullanıcı Escape tuşuna basana kadar Space tuşuna sürekli basacak
+# Kullanıcı Escape tuşuna basana kadar sol fare tıklamasına sürekli basacak
 try:
     while True:
-        pyautogui.press('space')  # Space tuşuna bas
+        pyautogui.click()  # Sol fare tıklaması yap
         time.sleep(0.1)  # 100ms bekle
 except KeyboardInterrupt:
     print("Program durduruldu.")
