@@ -1,0 +1,38 @@
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+const char* ssid = "linksys";      // WiFi adı
+const char* password = "baef2016"; // WiFi şifresi
+ESP8266WebServer server(80);
+const int redPin = D1; // Kırmızı LED'in bağlı olduğu pin
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  Serial.print("Bağlanıyor...");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.print(".");
+  }
+
+  Serial.println("\nWiFi bağlandı!");
+  Serial.print("IP Adresi: ");
+  Serial.println(WiFi.localIP());
+  pinMode(redPin, OUTPUT);
+  digitalWrite(redPin, LOW); // Başlangıçta LED kapalı
+  // HTTP Endpoints
+  server.on("/led/on", []() {
+  digitalWrite(redPin, LOW);
+  server.send(200, "text/plain", "LED Acildi");
+  });
+    server.on("/led/off", []() {
+    digitalWrite(redPin, HIGH);
+    server.send(200, "text/plain", "LED Kapandi");
+  });
+  server.begin();
+  Serial.println("HTTP server baslatildi.");
+}
+
+void loop() {
+  server.handleClient();
+}
