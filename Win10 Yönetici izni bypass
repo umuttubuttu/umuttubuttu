@@ -1,6 +1,0 @@
-1. dosya start.bat
-set __COMPAT_LAYER=RunAsInvoker
-start dosyaadı.exe
------------------------------------------------------------------------------------------------------------------
-2. dosya run-as-non-admin.bat
-cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" %1"
