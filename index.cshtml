@@ -1,0 +1,38 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">ANASAYFA</a>
+        </nav>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                @Html.ActionLink("HAKKINDA", "Hakkinda", "Default",
+               new { },
+               new { @class = "navbar-brand" })
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                @Html.ActionLink("RESİMLER", "Resimler", "Default",
+               new { },
+               new { @class = "navbar-brand" })
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
