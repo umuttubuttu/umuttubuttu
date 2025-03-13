@@ -1,0 +1,25 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hakkinda</title>
+</head>
+<body>
+    <div>
+        BU BİR HAKKINDA SAYFASI
+    </div>
+    <center>
+        <div class="container-fluid">
+            @Html.ActionLink("ANA SAYFA", "Index", "Default",
+           new { },
+           new { @class = "navbar-brand" })
+        </div>
+    </center>
+</body>
+</html>
